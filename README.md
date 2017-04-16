@@ -99,7 +99,7 @@ The module exports a single `function` that can take multiple arguments and retu
 ```js
 const samesame = require('samesame')
 
-samesame('They hate us', 'cause they ain\'t us')
+samesame('They hate us', 'cause they ain\'t us') // true
 samesame({}, {}) // true
 samesame({}, 'Object') // true
 samesame({}, undefined) // false
