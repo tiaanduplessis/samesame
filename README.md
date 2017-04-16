@@ -4,29 +4,6 @@
 </div>
 <br>
 <div align="center">
-    <a href="https://npmjs.org/package/samesame">
-      <img src="https://img.shields.io/npm/v/samesame.svg?style=flat-square" alt="NPM version" />
-    </a>
-    <a href="https://npmjs.org/package/samesame">
-    <img src="https://img.shields.io/npm/dm/samesame.svg?style=flat-square" alt="Downloads" />
-    </a>
-    <a href="https://github.com/feross/standard">
-      <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square" alt="Standard" />
-    </a>
-    <a href="https://travis-ci.org/tiaanduplessis/samesame">
-      <img src="https://img.shields.io/travis/tiaanduplessis/samesame/master.svg?style=flat-square" alt="Travis Build" />
-    </a>
-    <a href="https://github.com/RichardLitt/standard-readme)">
-      <img src="https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square" alt="Standard Readme" />
-    </a>
-    <a href="https://badge.fury.io/gh/tiaanduplessis%2Fsamesame">
-      <img src="https://badge.fury.io/gh/tiaanduplessis%2Fsamesame.svg?style=flat-square" alt="GitHub version" />
-   </a>
-   <a href="http://packagequality.com/#?package=samesame">
-    <img src="http://packagequality.com/shield/samesame.svg" alt="Package quality"/>
-  </a>
-</div>
-<div align="center">
   <a href="https://npmjs.org/package/samesame">
     <img src="https://img.shields.io/npm/v/samesame.svg?style=flat-square" alt="Package version" />
   </a>
@@ -48,7 +25,7 @@
   <a href="https://dependencyci.com/github/tiaanduplessis/samesame">
     <img src="https://dependencyci.com/github/tiaanduplessis/samesame/badge?style=flat-square" alt="Dependency CI" />
   </a>
-  <a href="https://github.com/tiaanduplessis/samesame/blob/master/other/LICENSE">
+  <a href="https://github.com/tiaanduplessis/samesame/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/samesame.svg?style=flat-square" alt="License" />
   </a>
   <a href="http://makeapullrequest.com">
