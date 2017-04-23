@@ -5,6 +5,9 @@
   "license": "MIT",
   "node": "src/index.js",
   "browser": "lib/samesame.min.js",
+  "engines": {
+    "node": ">= 6"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tiaanduplessis/samesame.git"
@@ -30,7 +33,9 @@
     "precommit": "npm test"
   },
   "keywords": [
-    "type","typeof","typechecker",
+    "type",
+    "typeof",
+    "typechecker",
     "samesame"
   ],
   "dependencies": {},
@@ -46,8 +51,12 @@
     "webpack": "^2.4.1"
   },
   "babel": {
-    "presets": ["es2015"],
-    "plugins": ["babel-plugin-add-module-exports"]
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "babel-plugin-add-module-exports"
+    ]
   },
   "standard": {
     "ignore": [

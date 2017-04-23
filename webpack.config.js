@@ -14,11 +14,5 @@ module.exports = {
       {test: /\.(js|jsx)$/, use: 'babel-loader'}
     ]
   },
-  externals: {
-    /**
-     * External libraries to give up control of.
-     * https://webpack.js.org/guides/author-libraries/#add-externals
-     */
-  },
   devtool: 'cheap-module-source-map'
 }
