@@ -1,6 +1,6 @@
 {
   "name": "samesame",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple, Lightweight type checking of multiple arguments",
   "license": "MIT",
   "main": "dist/samesame.js",
