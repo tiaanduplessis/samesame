@@ -1,7 +1,7 @@
 /* eslint-env jest */
 'use strict'
 
-import samesame from '../index'
+import samesame from '../src/index'
 
 test('same', () => {
   expect(samesame).toBeDefined()

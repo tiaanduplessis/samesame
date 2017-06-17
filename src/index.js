@@ -6,14 +6,13 @@ function type (value) {
   return Object.prototype.toString.apply(value).slice(8, -1)
 }
 
-module.exports = function (...args) {
+export default function (...args) {
   let result
 
-  args.map((value) => {
-    return type(value) === 'String' && types.includes(value)
-      ? value
-      : type(value)
-  })
+  args
+    .map(value => {
+      return type(value) === 'String' && types.includes(value) ? value : type(value)
+    })
     .reduce((acc, curr) => {
       result = acc === curr
       return curr
@@ -21,4 +20,3 @@ module.exports = function (...args) {
 
   return result
 }
-
