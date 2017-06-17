@@ -22,9 +22,6 @@
   <a href="https://badge.fury.io/gh/tiaanduplessis%2Fsamesame">
     <img src="https://badge.fury.io/gh/tiaanduplessis%2Fsamesame.svg?style=flat-square" alt="GitHub version" />
   </a>
-  <a href="https://dependencyci.com/github/tiaanduplessis/samesame">
-    <img src="https://dependencyci.com/github/tiaanduplessis/samesame/badge?style=flat-square" alt="Dependency CI" />
-  </a>
   <a href="https://github.com/tiaanduplessis/samesame/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/samesame.svg?style=flat-square" alt="License" />
   </a>
@@ -67,7 +64,7 @@
 
 ## About
 
-This module uses the `Object.prototype.toString()` method to provide better type checking and supports comparing the types of multiple values. It's just **580 Bytes** in size all bundled up as a UMD module, minified & gzipped(PR to reduce this further would be awesome 🎉).
+This module uses the `Object.prototype.toString()` method to provide better type checking and supports comparing the types of multiple values. It's just **352 Bytes** in size all bundled up as a UMD module, minified & gzipped.
 
 <div align="center">
 	<image src="https://media.giphy.com/media/C6JQPEUsZUyVq/giphy.gif" alt="same same"/>
