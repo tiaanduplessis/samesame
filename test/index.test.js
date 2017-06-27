@@ -13,7 +13,6 @@ test('same', () => {
   expect(samesame('Boolean', true, false)).toBe(true)
   expect(samesame([], 'Array')).toBe(true)
   expect(samesame(/foo/, 'RegExp')).toBe(true)
-	expect(samesame(true, 5)).toBe(false)
-  expect(samesame('Function', () => {
-  })).toBe(true)
+  expect(samesame(true, 5)).toBe(false)
+  expect(samesame('Function', () => {})).toBe(true)
 })
