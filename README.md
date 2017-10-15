@@ -64,6 +64,8 @@
 
 ## About
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/samesame.svg)](https://greenkeeper.io/)
+
 This module uses the `Object.prototype.toString()` method to provide better type checking and supports comparing the types of multiple values. It's just **352 Bytes** in size all bundled up as a UMD module, minified & gzipped.
 
 <div align="center">
