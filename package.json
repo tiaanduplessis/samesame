@@ -43,7 +43,7 @@
     "jest": "^22.0.0",
     "standard": "^10.0.2",
     "babel-preset-env": "^1.5.2",
-    "bili": "^1.0.0",
+    "bili": "^2.0.0",
     "husky": "^0.14.1",
     "prettier": "~1.10.0"
   },
