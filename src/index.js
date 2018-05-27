@@ -1,5 +1,3 @@
-'use strict'
-
 const types = 'Array Object String Date RegExp Function Boolean Number Null Undefined'
 
 function type (value) {

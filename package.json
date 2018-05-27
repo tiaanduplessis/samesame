@@ -3,9 +3,10 @@
   "version": "1.0.1",
   "description": "Simple, Lightweight type checking of multiple arguments",
   "license": "MIT",
+  "source": "src/index.js",
   "main": "dist/samesame.js",
-  "esnext": "dist/samesame.es.js",
-  "browser": "dist/samesame.min.js",
+  "module": "dist/samesame.m.js",
+  "browser": "dist/samesame.umd.js",
   "engines": {
     "node": ">= 6"
   },
@@ -15,22 +16,14 @@
   },
   "homepage": "https://github.com/tiaanduplessis/samesame",
   "bugs": "https://github.com/tiaanduplessis/samesame/issues",
-  "author": {
-    "name": "Tiaan",
-    "email": "tiaanduplessis@hotmail.com",
-    "url": "tiaan.beer"
-  },
+  "author": "tiaanduplessis@hotmail.com",
   "scripts": {
     "test": "jest",
-    "lint": "standard 'src/**/*.js'",
-    "lint:fix": "npm run lint -- --fix",
-    "build": "bili --format es --format umd --compress",
+    "lint": "standard --fix 'src/**/*.js'",
+    "coverage": "jest --coverage",
+    "build": "microbundle",
     "start": "npm run test",
-    "pretest": "npm run format && npm run lint:fix",
-    "format": "prettier --print-width 100 --semi false --single-quote --write 'src/**/*.js'",
-    "precommit": "npm test",
-    "prepublish": "npm run build",
-    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push --tags && npm publish"
+    "pretest": "npm run lint"
   },
   "keywords": [
     "type",
@@ -40,12 +33,10 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "jest": "^22.0.0",
-    "standard": "^11.0.0",
-    "babel-preset-env": "^1.5.2",
-    "bili": "^3.0.0",
-    "husky": "^0.14.1",
-    "prettier": "~1.13.0"
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.0.1",
+    "microbundle": "^0.4.4",
+    "standard": "^11.0.1"
   },
   "babel": {
     "presets": [

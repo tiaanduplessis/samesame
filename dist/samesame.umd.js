@@ -1,0 +1,2 @@
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):e.samesame=n()}(this,function(){var e="Array Object String Date RegExp Function Boolean Number Null Undefined";function n(e){return Object.prototype.toString.apply(e).slice(8,-1)}return function(){for(var t,r=[],o=arguments.length;o--;)r[o]=arguments[o];return r.map(function(t){return"String"===n(t)&&e.includes(t)?t:n(t)}).reduce(function(e,n){return t=e===n,n}),t}});
+//# sourceMappingURL=samesame.umd.js.map
