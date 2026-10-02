@@ -1,18 +1,21 @@
-const types = 'Array Object String Date RegExp Function Boolean Number Null Undefined'
+/* eslint-disable no-var -- Keep the distributed bundles compatible with ES5 syntax. */
+var types = 'Array Object String Date RegExp Function Boolean Number Null Undefined'
 
 function type (value) {
   return Object.prototype.toString.apply(value).slice(8, -1)
 }
 
-export default function (...args) {
-  let result
+export default function () {
+  var args = []
+  for (var length = arguments.length; length--;) args[length] = arguments[length]
+  var result
 
   args
-    .map(value => {
+    .map(function (value) {
       return type(value) === 'String' && types.includes(value) ? value : type(value)
     })
-    .reduce((acc, curr) => {
-      result = acc === curr
+    .reduce(function (acc, curr) {
+      result = result !== false && acc === curr
       return curr
     })
 

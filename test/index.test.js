@@ -1,18 +1,33 @@
-/* eslint-env jest */
 'use strict'
 
-import samesame from '../src/index'
+const fs = require('fs')
+const path = require('path')
+const vm = require('vm')
+const contract = require('./contract')
 
-test('same', () => {
-  expect(samesame).toBeDefined()
-  expect(samesame('They hate us', "cause they ain't us")).toBe(true)
-  expect(samesame({}, {})).toBe(true)
-  expect(samesame({}, 'Object')).toBe(true)
-  expect(samesame({}, undefined)).toBe(false)
-  expect(samesame('foo', 'bar', 'baz', 'ping', 'boo')).toBe(true)
-  expect(samesame('Boolean', true, false)).toBe(true)
-  expect(samesame([], 'Array')).toBe(true)
-  expect(samesame(/foo/, 'RegExp')).toBe(true)
-  expect(samesame(true, 5)).toBe(false)
-  expect(samesame('Function', () => {})).toBe(true)
-})
+const root = process.env.SAMESAME_PACKAGE_ROOT || path.resolve(__dirname, '..')
+const pkg = require(path.join(root, 'package.json'))
+contract(require(root), 'CommonJS package entry')
+contract(require(path.join(root, pkg.browser)), 'UMD CommonJS entry')
+
+const browser = {}
+const umd = fs.readFileSync(path.join(root, pkg.browser), 'utf8')
+vm.runInNewContext(umd, browser, { filename: pkg.browser })
+contract(browser.samesame, 'UMD browser global')
+
+const amd = {
+  define: (dependencies, factory) => {
+    if (typeof dependencies === 'function') {
+      amd.samesame = dependencies()
+    } else {
+      assertEmptyDependencies(dependencies)
+      amd.samesame = factory()
+    }
+  }
+}
+function assertEmptyDependencies (dependencies) {
+  if (dependencies.length !== 0) throw new Error('Unexpected UMD dependency')
+}
+amd.define.amd = {}
+vm.runInNewContext(umd, amd, { filename: pkg.browser })
+contract(amd.samesame, 'UMD AMD entry')
