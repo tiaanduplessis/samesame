@@ -18,12 +18,12 @@
   "bugs": "https://github.com/tiaanduplessis/samesame/issues",
   "author": "tiaanduplessis@hotmail.com",
   "scripts": {
-    "test": "jest",
-    "lint": "standard --fix 'src/**/*.js'",
-    "coverage": "jest --coverage",
-    "build": "microbundle",
-    "start": "npm run test",
-    "pretest": "npm run lint"
+    "test": "npm run lint && npm run build && node test/syntax.test.js && node test/index.test.js && node test/modules.test.mjs && npm run test:package",
+    "lint": "standard 'src/**/*.js' 'test/**/*.js' 'test/**/*.mjs' rollup.config.js",
+    "coverage": "npm run build && node --test --experimental-test-coverage test/index.test.js test/modules.test.mjs",
+    "build": "rollup --config",
+    "test:package": "node test/package.test.js",
+    "start": "npm test"
   },
   "keywords": [
     "type",
@@ -33,16 +33,12 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "jest": "^23.0.1",
-    "microbundle": "^0.5.0",
-    "standard": "^11.0.1"
+    "acorn": "8.18.0",
+    "rollup": "4.64.0",
+    "standard": "17.1.2"
   },
-  "babel": {
-    "presets": [
-      [
-        "env"
-      ]
-    ]
-  }
+  "files": [
+    "dist",
+    "src"
+  ]
 }

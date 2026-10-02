@@ -1,2 +1,28 @@
-var n="Array Object String Date RegExp Function Boolean Number Null Undefined";function e(n){return Object.prototype.toString.apply(n).slice(8,-1)}module.exports=function(){for(var r,t=[],u=arguments.length;u--;)t[u]=arguments[u];return t.map(function(r){return"String"===e(r)&&n.includes(r)?r:e(r)}).reduce(function(n,e){return r=n===e,e}),r};
+'use strict';
+
+/* eslint-disable no-var -- Keep the distributed bundles compatible with ES5 syntax. */
+var types = 'Array Object String Date RegExp Function Boolean Number Null Undefined';
+
+function type (value) {
+  return Object.prototype.toString.apply(value).slice(8, -1)
+}
+
+function index () {
+  var args = [];
+  for (var length = arguments.length; length--;) args[length] = arguments[length];
+  var result;
+
+  args
+    .map(function (value) {
+      return type(value) === 'String' && types.includes(value) ? value : type(value)
+    })
+    .reduce(function (acc, curr) {
+      result = result !== false && acc === curr;
+      return curr
+    });
+
+  return result
+}
+
+module.exports = index;
 //# sourceMappingURL=samesame.js.map

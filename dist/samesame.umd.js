@@ -1,2 +1,34 @@
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):e.samesame=n()}(this,function(){var e="Array Object String Date RegExp Function Boolean Number Null Undefined";function n(e){return Object.prototype.toString.apply(e).slice(8,-1)}return function(){for(var t,r=[],o=arguments.length;o--;)r[o]=arguments[o];return r.map(function(t){return"String"===n(t)&&e.includes(t)?t:n(t)}).reduce(function(e,n){return t=e===n,n}),t}});
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.samesame = factory());
+})(this, (function () { 'use strict';
+
+  /* eslint-disable no-var -- Keep the distributed bundles compatible with ES5 syntax. */
+  var types = 'Array Object String Date RegExp Function Boolean Number Null Undefined';
+
+  function type (value) {
+    return Object.prototype.toString.apply(value).slice(8, -1)
+  }
+
+  function index () {
+    var args = [];
+    for (var length = arguments.length; length--;) args[length] = arguments[length];
+    var result;
+
+    args
+      .map(function (value) {
+        return type(value) === 'String' && types.includes(value) ? value : type(value)
+      })
+      .reduce(function (acc, curr) {
+        result = result !== false && acc === curr;
+        return curr
+      });
+
+    return result
+  }
+
+  return index;
+
+}));
 //# sourceMappingURL=samesame.umd.js.map
